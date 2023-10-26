@@ -1,0 +1,10 @@
+<div *ngFor="let post of blogPosts">
+    <h2>{{ post.title }}</h2>
+    <img [src]="post.thumbnailUrl" alt="{{ post.title }}" />
+    <p>{{ post.body }}</p>
+    <p>Skapad: {{ post.creationDate | date }}</p>
+    <p>Likes: {{ post.likes }}, Dislikes: {{ post.dislikes }}</p>
+    <ul>
+        <li *ngFor="let comment of post.comments">{{ comment }}</li>
+    </ul>
+</div>
