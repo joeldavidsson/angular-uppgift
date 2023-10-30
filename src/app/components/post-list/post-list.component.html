@@ -1,10 +1,7 @@
-<div *ngFor="let post of blogPosts">
+<div
+    *ngFor="let post of blogPosts"
+    class="border-2 border-solid border-black"
+    routerLink="/post/{{ post.title }}">
     <h2>{{ post.title }}</h2>
-    <img [src]="post.thumbnailUrl" alt="{{ post.title }}" />
-    <p>{{ post.body }}</p>
-    <p>Skapad: {{ post.creationDate | date }}</p>
-    <p>Likes: {{ post.likes }}, Dislikes: {{ post.dislikes }}</p>
-    <ul>
-        <li *ngFor="let comment of post.comments">{{ comment }}</li>
-    </ul>
+    <img [src]="post.thumbnailUrl" alt="Bild kan ej hämtas" />
 </div>

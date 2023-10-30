@@ -1,0 +1,14 @@
+<div *ngIf="post" class="border-2 border-solid border-black">
+    <h2>{{ post.title }}</h2>
+    <img [src]="post.thumbnailUrl" alt="Bild kan ej hämtas" />
+    <p>{{ post.body }}</p>
+    <p>Created: {{ post.creationDate | date }}</p>
+    <p>Likes: {{ post.likes }}, Dislikes: {{ post.dislikes }}</p>
+    <p>Comments: {{ post.comments.length }}</p>
+    <ul>
+        <li *ngFor="let comment of post.comments">
+            {{ comment }}
+        </li>
+    </ul>
+</div>
+<app-add-comment [post]="post"></app-add-comment>

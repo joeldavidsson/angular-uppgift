@@ -1,0 +1,10 @@
+<form (ngSubmit)="addComment()">
+    <label for="comment">Comment: </label>
+    <input
+        type="text"
+        id="comment"
+        name="comment"
+        [(ngModel)]="comment"
+        class="border-2" />
+    <button type="submit">Add comment</button>
+</form>

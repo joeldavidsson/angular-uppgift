@@ -8,17 +8,25 @@ import { BlogserviceService } from 'src/app/services/blogservice.service';
     styleUrls: ['./posts.component.css'],
 })
 export class PostsComponent {
-    newBlogPost: BlogPostModel = new BlogPostModel();
-    constructor(private blogService: BlogserviceService) { }
+    newBlogPost: BlogPostModel = new BlogPostModel('', '', '', new Date(), 0, 0, []);
+
+    constructor(
+        private blogService: BlogserviceService
+    ) { }
+
     onSubmit() {
-        this.newBlogPost.title = 'Ny titel';
-        this.newBlogPost.thumbnailUrl = 'Ny bild-url';
-        this.newBlogPost.body = 'Nytt innehåll';
-        this.newBlogPost.creationDate = new Date();
-        this.newBlogPost.likes = 0;
-        this.newBlogPost.dislikes = 0;
-        this.newBlogPost.comments = [];
-        this.blogService.createBlogPost(this.newBlogPost);
-        this.newBlogPost = new BlogPostModel();
+        // Skapa en ny instans av BlogPostModel med användarens inmatning
+        const newBlogPost = new BlogPostModel(
+            this.newBlogPost.title,
+            this.newBlogPost.thumbnailUrl,
+            this.newBlogPost.body,
+            this.newBlogPost.creationDate,
+            this.newBlogPost.likes,
+            this.newBlogPost.dislikes,
+            this.newBlogPost.comments,
+        );
+
+        this.blogService.createBlogPost(newBlogPost);
+        this.newBlogPost = new BlogPostModel('', '', '', new Date(), 0, 0, []);
     }
 }
