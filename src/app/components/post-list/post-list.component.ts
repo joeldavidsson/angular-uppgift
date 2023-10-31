@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BlogserviceService } from 'src/app/services/blogservice.service';
+import { AdminModeService } from 'src/app/services/admin-mode.service';
 import { BlogPostModel } from 'src/app/blog-post-model';
 import { Router } from '@angular/router';
 
@@ -17,11 +18,12 @@ export class PostListComponent implements OnInit {
     }
 
 
-    constructor(private blogService: BlogserviceService, private router: Router) { }
+    constructor(public blogService: BlogserviceService, private router: Router, public adminModeService: AdminModeService) { }
 
     onClick(post: BlogPostModel) {
         this.router.navigate(['post', post.title])
     }
+
 
     ngOnInit() {
 

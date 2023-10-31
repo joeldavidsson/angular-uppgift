@@ -3,11 +3,11 @@ import { BlogPostModel } from 'src/app/blog-post-model';
 import { BlogserviceService } from 'src/app/services/blogservice.service';
 
 @Component({
-    selector: 'app-posts',
-    templateUrl: './posts.component.html',
-    styleUrls: ['./posts.component.css'],
+    selector: 'app-add-post',
+    templateUrl: './add-post.component.html',
+    styleUrls: ['./add-post.component.css'],
 })
-export class PostsComponent {
+export class AddPostComponent {
     newBlogPost: BlogPostModel = new BlogPostModel('', '', '', new Date(), 0, 0, []);
 
     constructor(

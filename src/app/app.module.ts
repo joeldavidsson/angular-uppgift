@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { PostsComponent } from './components/posts/posts.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { BlogserviceService } from './services/blogservice.service';
 import { HomeComponent } from './views/home/home/home.component';
@@ -18,7 +18,7 @@ import { AddCommentComponent } from './components/add-comment/add-comment.compon
     declarations: [
         AppComponent,
         NavBarComponent,
-        PostsComponent,
+        AddPostComponent,
         PostListComponent,
         HomeComponent,
         AboutComponent,
@@ -31,4 +31,4 @@ import { AddCommentComponent } from './components/add-comment/add-comment.compon
     providers: [BlogserviceService],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

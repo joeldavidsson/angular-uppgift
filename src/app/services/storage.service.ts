@@ -12,10 +12,19 @@ export class StorageService {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  
-  public getData(key: string): void {
+
+  public getData(key: string): object | null {
     const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+
+    if (data) {
+      try {
+        return JSON.parse(data);
+      } catch (error) {
+        console.error('Error parsing data:', error);
+        return null;
+      }
+    }
+    return null;
   }
 
   public removeData(key: string): void {

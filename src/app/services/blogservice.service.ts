@@ -12,14 +12,16 @@ export class BlogserviceService {
 
     constructor(private storageService: StorageService) {
         const savedData = this.storageService.getData('myPosts');
-        if (Array.isArray(savedData)) {
+        if (Array.isArray(savedData) && savedData.length > 0) {
             this.blogPosts = savedData;
+        } else {
+            this.blogPosts = [];
+            this.saveBlogPostsToLocalStorage();
         }
         this.blogPostsSubject.next(this.blogPosts);
     }
 
     createBlogPost(blogPost: BlogPostModel): void {
-        // Lägg till det nya inlägget i arrayen
         this.blogPosts.push(blogPost);
         this.saveBlogPostsToLocalStorage();
         this.blogPostsSubject.next(this.blogPosts);
@@ -28,6 +30,15 @@ export class BlogserviceService {
     addCommentToBlogPost(post: BlogPostModel, comment: string): void {
         post.comments.push(comment);
         this.saveBlogPostsToLocalStorage();
+    }
+
+    removeBlogPost(title: string): void {
+        const index = this.blogPosts.findIndex((post) => post.title === title);
+
+        if (index !== -1) {
+            this.blogPosts.splice(index, 1);
+            this.saveBlogPostsToLocalStorage();
+        }
     }
 
     getBlogPosts(): BlogPostModel[] {
@@ -42,7 +53,7 @@ export class BlogserviceService {
         return this.blogPostsSubject;
     }
 
-    private saveBlogPostsToLocalStorage(): void {
+    saveBlogPostsToLocalStorage(): void {
         this.storageService.setData('myPosts', this.blogPosts);
     }
 }

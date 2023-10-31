@@ -4,4 +4,9 @@
     routerLink="/post/{{ post.title }}">
     <h2>{{ post.title }}</h2>
     <img [src]="post.thumbnailUrl" alt="Bild kan ej hämtas" />
+    <button
+        (click)="blogService.removeBlogPost(post.title)"
+        *ngIf="adminModeService.isAdmin()">
+        Remove post
+    </button>
 </div>
