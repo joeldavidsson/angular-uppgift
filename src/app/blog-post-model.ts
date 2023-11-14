@@ -18,13 +18,3 @@ export class BlogPostModel {
         this.comments = comments;
     }
 }
-
-/* constructor(
-    public title: string,
-    public thumbnailUrl: string,
-    public body: string,
-    public creationDate: Date,
-    public likes: number,
-    public dislikes: number,
-    public comments: string[]
-) { } */

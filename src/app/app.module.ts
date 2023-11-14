@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { NgIconsModule } from '@ng-icons/core';
+import { ionThumbsUpOutline, ionThumbsDownOutline } from '@ng-icons/ionicons';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +29,7 @@ import { AddCommentComponent } from './components/add-comment/add-comment.compon
         AdminComponent,
         AddCommentComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, FormsModule],
+    imports: [BrowserModule, AppRoutingModule, FormsModule, NgIconsModule.withIcons({ ionThumbsDownOutline, ionThumbsUpOutline })],
     providers: [BlogserviceService],
     bootstrap: [AppComponent],
 })

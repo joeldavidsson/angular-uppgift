@@ -1,12 +1,24 @@
-<div
-    *ngFor="let post of blogPosts"
-    class="border-2 border-solid border-black"
-    routerLink="/post/{{ post.title }}">
-    <h2>{{ post.title }}</h2>
-    <img [src]="post.thumbnailUrl" alt="Bild kan ej hämtas" />
-    <button
-        (click)="blogService.removeBlogPost(post.title)"
-        *ngIf="adminModeService.isAdmin()">
-        Remove post
-    </button>
-</div>
+<section
+    class="flex flex-row gap-20 flex-wrap justify-center items-center w-full h-full">
+    <div
+        *ngFor="let post of blogPosts"
+        class="w-1/4 h-auto text-center relative border-2 border-transparent rounded-lg text-white hover:scale-105 duration-500 cursor-pointer"
+        routerLink="/post/{{ post.title }}">
+        <span
+            class="absolute bottom-0 rounded-b-lg bg-black opacity-70 h-1/6 w-full items-center flex justify-center">
+            <h2 class="text-l uppercase font-thin">
+                {{ post.title }}
+            </h2>
+        </span>
+        <img
+            [src]="post.thumbnailUrl"
+            alt="Bild kan ej hämtas"
+            class="border-2 border-transparent rounded-lg" />
+        <button
+            (click)="blogService.removeBlogPost(post.title)"
+            *ngIf="adminModeService.isAdmin()"
+            class="absolute top-0 right-0 bg-black op">
+            Remove post
+        </button>
+    </div>
+</section>
