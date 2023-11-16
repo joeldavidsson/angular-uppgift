@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BlogPostModel } from 'src/app/blog-post-model';
+import { BlogPostModel } from 'src/app/utils/blog-post-model';
 import { BlogserviceService } from 'src/app/services/blogservice.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class AddPostComponent {
     ) { }
 
     onSubmit() {
-        // Skapa en ny instans av BlogPostModel med användarens inmatning
+        
         const newBlogPost = new BlogPostModel(
             this.newBlogPost.title,
             this.newBlogPost.thumbnailUrl,

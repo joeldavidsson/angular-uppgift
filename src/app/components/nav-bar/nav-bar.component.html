@@ -1,15 +1,23 @@
-<nav class="flex w-screen h-28 items-center justify-center text-white">
-    <span class="font-extrabold text-2xl">myTravelRecommendations</span>
-    <menu class="flex w-2/3 justify-end font-semibold">
-        <ul class="flex gap-12">
+<nav
+    class="flex w-full h-20 items-center justify-center text-white mobile:flex-col">
+    <span class="w-2/6 cursor-pointer mobile:w-full" routerLink="">
+        <p
+            class="uppercase font-extrabold text-5xl tracking-widest mobile:text-sm mobile:text-center">
+            The travel blog
+        </p>
+        <p
+            class="uppercase tracking-[0.24em] mobile:text-xs mobile:text-center">
+            Inspiration for your next big adventure
+        </p>
+    </span>
+    <menu
+        class="flex w-3/6 justify-end font-semibold text-lg mobile:text-sm mobile:w-full mobile: mt-4">
+        <ul class="flex gap-12 mobile:gap-3">
             <li class="hover:text-black">
                 <a routerLink="">HOME</a>
             </li>
             <li class="hover:text-black">
                 <a routerLink="/about">ABOUT ME</a>
-            </li>
-            <li class="hover:text-black">
-                <a routerLink="/contact">CONTACT</a>
             </li>
             <li class="hover:text-black" *ngIf="adminModeService.isAdmin()">
                 <a routerLink="/admin">CREATE NEW POST</a>

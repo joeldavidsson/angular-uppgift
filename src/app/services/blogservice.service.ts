@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BlogPostModel } from '../blog-post-model';
+import { BlogPostModel } from '../utils/blog-post-model';
 import { StorageService } from './storage.service';
 import { BehaviorSubject } from 'rxjs';
 

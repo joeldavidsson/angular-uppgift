@@ -1,23 +1,38 @@
-<section>
-    <h1 class="text-5xl font-bold">Contact</h1>
-    <span>
-        <img
-            src="https://venkatarangan.com/blog/wp-content/uploads/2018/09/borat-2006.jpg"
-            alt="" />
-    </span>
-    <div>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt,
-            pariatur ex? Nostrum enim dicta natus laboriosam mollitia aspernatur
-            itaque vero, vitae aliquid! Ad possimus modi rerum, vero dicta animi
-            dolores.
-        </p>
-        <br />
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt,
-            pariatur ex? Nostrum enim dicta natus laboriosam mollitia aspernatur
-            itaque vero, vitae aliquid! Ad possimus modi rerum, vero dicta animi
-            dolores.
-        </p>
-    </div>
-</section>
+<article
+    class="min-w-[700px] mb-10 rounded-3xl backdrop-blur-sm bg-black bg-opacity-10 p-12 text-white mobile:min-w-full">
+    <h1 class="text-3xl font-bold text-center uppercase tracking-[0.8rem]">
+        CONTACT ME
+    </h1>
+    <form
+        (ngSubmit)="onSubmit()"
+        class="w-full flex flex-col justify-center items-center justify-self-center p-5 gap-5 tracking-widest">
+        <label for="name" class="uppercase font-semibold">name</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="newContact.name"
+            class="rounded-lg w-1/2 p-1 bg-black bg-opacity-40 backdrop-blur-3xl text-center mobile:w-full" />
+
+        <label for="mail" class="uppercase font-semibold">mail</label>
+        <input
+            type="text"
+            id="mail"
+            name="mail"
+            [(ngModel)]="newContact.mail"
+            class="rounded-lg w-1/2 p-1 bg-black bg-opacity-40 backdrop-blur-3xl text-center mobile:w-full" />
+
+        <label for="body" class="uppercase font-semibold">MESSAGE</label>
+        <textarea
+            id="body"
+            name="body"
+            [(ngModel)]="newContact.body"
+            class="rounded-lg w-3/4 h-80 p-1 bg-black bg-opacity-40 backdrop-blur-3xl mobile:w-full"></textarea>
+
+        <button
+            type="submit"
+            class="uppercase rounded-3xl p-2 px-5 bg-black bg-opacity-40 backdrop-blur-3xl font-semibold">
+            Send message
+        </button>
+    </form>
+</article>

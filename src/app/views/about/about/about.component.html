@@ -1,17 +1,39 @@
 <section class="text-white w-full flex flex-col justify-center items-center">
     <div
-        class="flex flex-col justify-center items-center rounded-3xl backdrop-blur-xl p-12 gap-5 w-1/2 mb-10">
-        <h1 class="text-5xl font-bold text-center uppercase">About me</h1>
-        <img
-            src="https://venkatarangan.com/blog/wp-content/uploads/2018/09/borat-2006.jpg"
-            alt="bild"
-            class="w-3/4 h-auto rounded-lg" />
-        <span class="flex flex-col gap-5 leading-relaxed w-3/4">
+        class="flex flex-col justify-center items-center p-12 gap-5 w-1/2 mb-10 backdrop-blur-sm bg-black bg-opacity-10 rounded-3xl mobile:w-full">
+        <h1 class="text-3xl font-bold text-center uppercase tracking-[0.8rem]">
+            About me
+        </h1>
+        <div class="flex flex-row w-full h-[400px] my-7">
+            <span class="flex flex-wrap">
+                <img
+                    src="/assets/images/kambodja1.jpg"
+                    alt="kambodja1"
+                    class="w-1/2 object-cover rounded-tl-3xl mobile:w-full mobile:rounded-tr-3xl" />
+                <img
+                    src="/assets/images/kambodja2.jpg"
+                    alt="kambodja2"
+                    class="w-1/2 object-cover mobile:w-full mobile:rounded-b-3xl" />
+                <img
+                    src="/assets/images/australien.jpg"
+                    alt="australien"
+                    class="w-1/2 object-cover rounded-bl-3xl mobile:hidden" />
+                <img
+                    src="/assets/images/horses.jpg"
+                    alt="horses"
+                    class="w-1/2 object-cover mobile:hidden" />
+            </span>
+            <img
+                src="/assets/images/edinburgh.jpg"
+                alt="edinburgh"
+                class="w-1/3 object-cover rounded-r-3xl mobile:hidden" />
+        </div>
+        <span
+            class="flex flex-col gap-5 leading-relaxed w-full px-20 tracking-wide mobile:px-2">
             <p>
                 Hello fellow travelers and wanderlust enthusiasts! Welcome to
-                myTravelRecommendations, where the world becomes your
-                playground, and every journey is an opportunity to create
-                lasting memories.
+                The Travel Blog, where the world becomes your playground, and
+                every journey is an opportunity to create lasting memories.
             </p>
 
             <p>
@@ -66,5 +88,13 @@
             </p>
             <p>Happy travels! <br />Joel</p>
         </span>
+        <p class="text-lg">
+            If you wish to contact me, click
+            <a
+                routerLink="/contact"
+                class="uppercase font-bold hover:text-black"
+                >here!</a
+            >
+        </p>
     </div>
 </section>

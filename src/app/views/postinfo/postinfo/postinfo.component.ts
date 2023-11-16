@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BlogPostModel } from 'src/app/blog-post-model';
+import { BlogPostModel } from 'src/app/utils/blog-post-model';
 import { BlogserviceService } from 'src/app/services/blogservice.service';
 
 @Component({

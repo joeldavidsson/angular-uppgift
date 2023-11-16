@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BlogPostModel } from 'src/app/blog-post-model';
+import { BlogPostModel } from 'src/app/utils/blog-post-model';
 import { BlogserviceService } from 'src/app/services/blogservice.service';
 
 @Component({
@@ -18,7 +18,6 @@ export class AddCommentComponent {
     if (this.post) {
       this.blogService.addCommentToBlogPost(this.post, this.comment);
       this.comment = '';
-      console.log(this.post, this.comment)
     }
 
   }

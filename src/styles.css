@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-image: url(https://wallpapercave.com/wp/wp9663896.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}

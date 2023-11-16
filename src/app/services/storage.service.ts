@@ -5,9 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() { }
-
   public setData(key: string, value: object): void {
     localStorage.setItem(key, JSON.stringify(value));
   }

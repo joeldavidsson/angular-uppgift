@@ -2,7 +2,7 @@
     class="text-white w-full flex flex-col justify-center items-center mb-10">
     <div
         *ngIf="post"
-        class="flex flex-col justify-center items-center w-1/2 rounded-3xl backdrop-blur-xl py-12 gap-5">
+        class="flex flex-col justify-center items-center w-1/2 rounded-3xl backdrop-blur-sm bg-black bg-opacity-10 py-12 gap-5 mobile:w-full">
         <img
             [src]="post.thumbnailUrl"
             alt="Bild kan ej hämtas"
@@ -16,7 +16,7 @@
             <button
                 *ngIf="post"
                 (click)="likePost()"
-                class="uppercase border-2 rounded-3xl p-2 bg-black bg-opacity-60 border-black font-semibold w-24 flex justify-evenly">
+                class="uppercase rounded-3xl p-2 backdrop-blur-3xl bg-black bg-opacity-40 font-semibold w-24 flex justify-evenly">
                 <ng-icon
                     name="ionThumbsUpOutline"
                     size="24px"
@@ -27,7 +27,7 @@
             <button
                 *ngIf="post"
                 (click)="dislikePost()"
-                class="uppercase border-2 rounded-3xl p-2 bg-black bg-opacity-60 border-black font-semibold w-24 flex justify-evenly">
+                class="uppercase rounded-3xl p-2 backdrop-blur-3xl bg-black bg-opacity-40 font-semibold w-24 flex justify-evenly">
                 <ng-icon
                     name="ionThumbsDownOutline"
                     size="24px"
@@ -36,12 +36,14 @@
             </button>
         </span>
         <span class="flex flex-col justify-start w-3/4">
-            <p class="font-bold">Comments: {{ post.comments.length }}</p>
+            <p class="font-bold text-lg">
+                Comments: {{ post.comments.length }}
+            </p>
             <ul>
                 <li
                     *ngFor="let comment of post.comments"
-                    class="rounded-md p-2 my-5 bg-black bg-opacity-60 border-black">
-                    {{ comment }}
+                    class="rounded-md p-3 my-5 bg-black bg-opacity-40 border-black backdrop-blur-3xl">
+                    <p>{{ comment }}</p>
                 </li>
             </ul>
         </span>
@@ -49,7 +51,7 @@
             <app-add-comment [post]="post" class="w-3/4"></app-add-comment>
             <button
                 routerLink=""
-                class="uppercase border-2 rounded-3xl p-1 px-5 bg-black bg-opacity-60 border-black">
+                class="px-5 uppercase rounded-3xl p-2 backdrop-blur-3xl bg-black bg-opacity-40 font-semibold">
                 Back to home
             </button>
         </span>

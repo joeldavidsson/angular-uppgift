@@ -1,12 +1,13 @@
 <section
-    class="flex flex-row gap-20 flex-wrap justify-center items-center w-full h-full">
+    class="flex flex-row gap-20 flex-wrap justify-center items-center w-full h-full mb-10 mobile:flex-col mobile:gap-10">
     <div
         *ngFor="let post of blogPosts"
-        class="w-1/4 h-auto text-center relative border-2 border-transparent rounded-lg text-white hover:scale-105 duration-500 cursor-pointer"
+        class="w-1/4 h-auto text-center relative border-2 border-transparent rounded-lg text-white hover:scale-105 duration-500 cursor-pointer mobile:w-5/6"
         routerLink="/post/{{ post.title }}">
         <span
-            class="absolute bottom-0 rounded-b-lg bg-black opacity-70 h-1/6 w-full items-center flex justify-center">
-            <h2 class="text-l uppercase font-thin">
+            class="absolute bottom-0 rounded-b-lg bg-black opacity-70 h-1/6 w-full items-center flex justify-center mobile:left-0">
+            <h2
+                class="text-l uppercase font-thin tracking-widest mobile:text-sm">
                 {{ post.title }}
             </h2>
         </span>
@@ -17,8 +18,8 @@
         <button
             (click)="blogService.removeBlogPost(post.title)"
             *ngIf="adminModeService.isAdmin()"
-            class="absolute top-0 right-0 bg-black op">
-            Remove post
+            class="absolute top-1 right-1 bg-red-700 rounded-lg p-1 hover:text-black tracking-wider font-semibold">
+            DELETE
         </button>
     </div>
 </section>
