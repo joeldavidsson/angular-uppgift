@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContactModel } from 'src/app/utils/contact-model';
+import { ContactModel } from 'src/app/utils/classes/contact-model';
 
 @Component({
   selector: 'app-contact',

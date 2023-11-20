@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AdminModeService } from 'src/app/services/admin-mode.service';
+import { AdminModeService } from 'src/app/services/admin-mode/admin-mode.service';
 
 @Component({
     selector: 'app-nav-bar',

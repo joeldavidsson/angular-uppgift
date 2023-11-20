@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BlogPostModel } from 'src/app/utils/blog-post-model';
-import { BlogserviceService } from 'src/app/services/blogservice.service';
+import { BlogPostModel } from 'src/app/utils/classes/blog-post-model';
+import { BlogserviceService } from 'src/app/services/blogservice/blogservice.service';
 
 @Component({
     selector: 'app-add-post',
@@ -15,7 +15,7 @@ export class AddPostComponent {
     ) { }
 
     onSubmit() {
-        
+
         const newBlogPost = new BlogPostModel(
             this.newBlogPost.title,
             this.newBlogPost.thumbnailUrl,

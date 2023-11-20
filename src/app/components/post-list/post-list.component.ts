@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BlogserviceService } from 'src/app/services/blogservice.service';
-import { AdminModeService } from 'src/app/services/admin-mode.service';
-import { BlogPostModel } from 'src/app/utils/blog-post-model';
+import { BlogserviceService } from 'src/app/services/blogservice/blogservice.service';
+import { AdminModeService } from 'src/app/services/admin-mode/admin-mode.service';
+import { BlogPostModel } from 'src/app/utils/classes/blog-post-model';
 import { Router } from '@angular/router';
 
 @Component({

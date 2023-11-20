@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { PostListComponent } from './components/post-list/post-list.component';
-import { BlogserviceService } from './services/blogservice.service';
+import { BlogserviceService } from './services/blogservice/blogservice.service';
 import { HomeComponent } from './views/home/home/home.component';
 import { AboutComponent } from './views/about/about/about.component';
 import { PostinfoComponent } from './views/postinfo/postinfo/postinfo.component';

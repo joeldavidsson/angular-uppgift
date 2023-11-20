@@ -1,11 +1,11 @@
 <section
-    class="flex flex-row gap-20 flex-wrap justify-center items-center w-full h-full mb-10 mobile:flex-col mobile:gap-10">
+    class="mt-10 flex flex-row gap-20 flex-wrap justify-center items-center w-full h-full mb-10 mobile:flex-col mobile:gap-10">
     <div
         *ngFor="let post of blogPosts"
-        class="w-1/4 h-auto text-center relative border-2 border-transparent rounded-lg text-white hover:scale-105 duration-500 cursor-pointer mobile:w-5/6"
+        class="w-1/4 text-center relative border-2 border-transparent rounded-lg text-white hover:scale-105 duration-500 cursor-pointer mobile:w-5/6"
         routerLink="/post/{{ post.title }}">
         <span
-            class="absolute bottom-0 rounded-b-lg bg-black opacity-70 h-1/6 w-full items-center flex justify-center mobile:left-0">
+            class="absolute bottom-0.5 right-0.5 rounded-b-lg bg-black opacity-70 h-1/6 w-[99%] items-center flex justify-center mobile:left-0">
             <h2
                 class="text-l uppercase font-thin tracking-widest mobile:text-sm">
                 {{ post.title }}
@@ -14,7 +14,7 @@
         <img
             [src]="post.thumbnailUrl"
             alt="Bild kan ej hämtas"
-            class="border-2 border-transparent rounded-lg" />
+            class="border-2 border-transparent rounded-lg w-full h-[270px]" />
         <button
             (click)="blogService.removeBlogPost(post.title)"
             *ngIf="adminModeService.isAdmin()"

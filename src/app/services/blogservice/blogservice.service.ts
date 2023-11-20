@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BlogPostModel } from '../utils/blog-post-model';
-import { StorageService } from './storage.service';
+import { BlogPostModel } from '../../utils/classes/blog-post-model';
+import { StorageService } from '../storage/storage.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
